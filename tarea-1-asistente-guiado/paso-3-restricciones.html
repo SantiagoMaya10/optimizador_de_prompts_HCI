@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paso 3: Restricciones y Formato - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab active">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="../tarea-2-optimizacion-automatica/index.html" class="nav-tab">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="../tarea-3-comparacion-ab/index.html" class="nav-tab">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="paso-2-tarea.html" class="back-link">
+      ← Volver al Paso 2
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Construir Prompt con Asistente Guiado</h1>
+      <p class="mt-sm">Sigue el flujo paso a paso para crear un prompt optimizado y riguroso.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Contexto</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Tarea</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step active">
+        <div class="step-number">3</div>
+        <span class="step-label">Restricciones</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <span class="step-label">Finalizar</span>
+      </div>
+    </div>
+
+    <!-- Three Column Layout -->
+    <div class="three-column-layout">
+      
+      <!-- Column 1: User Input -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📝</span>
+            Entrada del Usuario
+          </h3>
+          <span class="column-label">Columna 1</span>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">
+            Tu idea o prompt inicial <span class="text-muted">(opcional)</span>
+          </label>
+          <textarea class="form-textarea">Necesito que me ayudes a escribir código Python para procesar datos de ventas</textarea>
+        </div>
+
+        <div class="mt-lg">
+          <span class="tag tag-success">✓ Contexto definido</span>
+          <span class="tag tag-success mt-sm">✓ Tarea definida</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Guided Builder - Restrictions Step -->
+      <div class="card" style="border-color: var(--accent-primary); box-shadow: var(--shadow-glow);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">⚙️</span>
+            Paso 3: Restricciones y Formato
+          </h3>
+          <span class="column-label">Columna 2</span>
+        </div>
+
+        <p class="mb-lg text-muted" style="font-size: 0.9rem;">
+          Controla el resultado esperado, reduciendo la variabilidad de las respuestas.
+        </p>
+
+        <!-- Tabs for Format/Restrictions -->
+        <div class="tabs">
+          <button class="tab active">📄 Formato de Salida</button>
+          <button class="tab">🎛️ Parámetros</button>
+        </div>
+
+        <!-- Output Format -->
+        <div class="form-group">
+          <label class="form-label">
+            Formato de Salida <span class="required">*</span>
+          </label>
+          <select class="form-select">
+            <option value="">Selecciona el formato deseado...</option>
+            <option value="code" selected>💻 Código - Bloques de código formateados</option>
+            <option value="json">📋 JSON - Estructura de datos JSON</option>
+            <option value="markdown">📝 Markdown - Texto con formato rico</option>
+            <option value="table">📊 Tabla - Datos tabulados</option>
+            <option value="steps">📌 Pasos Secuenciales - Lista numerada</option>
+            <option value="bullet">• Puntos - Lista con viñetas</option>
+            <option value="prose">📄 Prosa - Texto corrido</option>
+          </select>
+        </div>
+
+        <!-- Technical Parameters -->
+        <div class="form-group">
+          <label class="form-label">
+            Temperatura (creatividad) 
+            <span class="tag tag-primary" style="margin-left: 0.5rem;">0.3</span>
+          </label>
+          <div class="slider-container">
+            <span class="text-muted" style="font-size: 0.75rem;">Preciso</span>
+            <input type="range" class="slider" min="0" max="100" value="30">
+            <span class="text-muted" style="font-size: 0.75rem;">Creativo</span>
+          </div>
+          <p class="text-muted mt-sm" style="font-size: 0.75rem;">
+            Valores bajos = respuestas más determinísticas y precisas
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Longitud Máxima (tokens)
+            <span class="tag tag-primary" style="margin-left: 0.5rem;">2048</span>
+          </label>
+          <div class="slider-container">
+            <span class="text-muted" style="font-size: 0.75rem;">Corto</span>
+            <input type="range" class="slider" min="0" max="100" value="50">
+            <span class="text-muted" style="font-size: 0.75rem;">Largo</span>
+          </div>
+        </div>
+
+        <!-- Additional Restrictions -->
+        <div class="form-group">
+          <label class="form-label">Restricciones adicionales</label>
+          <div style="display: grid; gap: 0.5rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" checked> 
+              <span style="font-size: 0.875rem;">Incluir comentarios en el código</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" checked> 
+              <span style="font-size: 0.875rem;">Manejar errores y excepciones</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox"> 
+              <span style="font-size: 0.875rem;">Optimizar para rendimiento</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox"> 
+              <span style="font-size: 0.875rem;">Solo usar biblioteca estándar</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="btn-group mt-xl">
+          <a href="paso-2-tarea.html" class="btn btn-secondary">
+            ← Anterior
+          </a>
+          <a href="paso-4-finalizar.html" class="btn btn-primary btn-lg" style="flex: 1;">
+            Revisar y Finalizar →
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 3: Preview -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">👁️</span>
+            Vista Previa del Prompt
+          </h3>
+          <span class="column-label">Columna 3</span>
+        </div>
+
+        <div class="prompt-preview">
+          <div class="section">
+            <span class="section-label">Contexto / Rol</span>
+            <span class="highlight">Actúa como un experto en Python</span> con amplia experiencia en análisis de datos. 
+            Conoces las mejores prácticas de PEP8 y trabajas con pandas regularmente.
+          </div>
+          <div class="section">
+            <span class="section-label">Tarea Principal</span>
+            <span class="highlight">[Generar Código]</span> Escribe un script que lea un archivo CSV de ventas, 
+            calcule el total de ventas por categoría, y genere un resumen con estadísticas básicas.
+          </div>
+          <div class="section">
+            <span class="section-label">Restricciones y Formato</span>
+            <span class="highlight">Formato:</span> Código con comentarios explicativos<br><br>
+            <span class="highlight">Requisitos:</span>
+            <ul style="margin: 0.5rem 0 0 1rem; padding: 0;">
+              <li>Incluir comentarios en el código</li>
+              <li>Manejar errores y excepciones</li>
+            </ul>
+            <br>
+            <span class="highlight">Parámetros:</span> temp=0.3, max_tokens=2048
+          </div>
+        </div>
+
+        <div class="score-display mt-lg">
+          <div class="score-circle" style="--score: 85;">
+            <span class="score-value">85%</span>
+          </div>
+          <div class="score-info">
+            <h4>Puntaje de Claridad</h4>
+            <p>¡Excelente estructura!</p>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-block mt-lg">
+          📋 Copiar prompt actual
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 1: Asistente Guiado</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

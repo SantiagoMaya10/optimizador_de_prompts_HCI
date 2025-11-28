@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decisión Final - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="../tarea-2-optimizacion-automatica/index.html" class="nav-tab">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Comparación A/B de Prompts</h1>
+      <p class="mt-sm">Prueba completada exitosamente.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Seleccionar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Configurar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Ejecutar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Decidir</span>
+      </div>
+    </div>
+
+    <!-- Success Modal / Card -->
+    <div style="max-width: 600px; margin: 0 auto;">
+      <div class="card" style="text-align: center; padding: 3rem;">
+        
+        <div class="modal-icon success" style="width: 100px; height: 100px; font-size: 2.5rem;">
+          🎉
+        </div>
+
+        <h2 style="margin-top: 1.5rem;">¡Prompt Optimizado Seleccionado!</h2>
+        
+        <p class="text-muted mt-md" style="font-size: 1rem;">
+          El prompt optimizado ha sido copiado automáticamente a tu portapapeles y está listo para usar.
+        </p>
+
+        <!-- Summary Stats -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-lg);">
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: var(--accent-success);">+26%</div>
+            <div class="text-muted" style="font-size: 0.75rem; text-transform: uppercase;">Consistencia</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: var(--accent-success);">+19%</div>
+            <div class="text-muted" style="font-size: 0.75rem; text-transform: uppercase;">Precisión</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: var(--accent-primary);">-36%</div>
+            <div class="text-muted" style="font-size: 0.75rem; text-transform: uppercase;">Longitud</div>
+          </div>
+        </div>
+
+        <!-- Copied Prompt Preview -->
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); border-radius: var(--radius-md); padding: 1rem; text-align: left; margin-bottom: 1.5rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+            <span class="tag tag-success">✓ Copiado al portapapeles</span>
+            <button class="btn btn-ghost btn-sm" onclick="alert('📋 Copiado nuevamente!')">
+              📋 Copiar
+            </button>
+          </div>
+          <div class="prompt-preview" style="font-size: 0.8125rem; max-height: 150px;">
+            Actúa como un asistente de redacción ejecutiva especializado en comunicación corporativa.
+
+[Tarea] Escribe un email profesional para solicitar una revisión salarial.
+
+[Contexto] Soy desarrollador senior con 5 años de experiencia...
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="btn-group" style="justify-content: center;">
+          <a href="index.html" class="btn btn-secondary">
+            🔄 Nueva Comparación
+          </a>
+          <a href="../index.html" class="btn btn-primary btn-lg">
+            ← Volver al Inicio
+          </a>
+        </div>
+
+        <!-- Additional Options -->
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+          <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 1rem;">
+            ¿Qué te gustaría hacer ahora?
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="../tarea-1-asistente-guiado/index.html" class="btn btn-ghost btn-sm">
+              🎯 Crear nuevo prompt
+            </a>
+            <a href="../tarea-2-optimizacion-automatica/index.html" class="btn btn-ghost btn-sm">
+              ✨ Optimizar otro
+            </a>
+            <button class="btn btn-ghost btn-sm">
+              💾 Guardar en favoritos
+            </button>
+            <button class="btn btn-ghost btn-sm">
+              📤 Exportar resultados
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 3: Comparación A/B</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

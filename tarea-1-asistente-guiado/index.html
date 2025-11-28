@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente Guiado - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab active">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="../tarea-2-optimizacion-automatica/index.html" class="nav-tab">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="../tarea-3-comparacion-ab/index.html" class="nav-tab">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="../index.html" class="back-link">
+      ← Volver al inicio
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Construir Prompt con Asistente Guiado</h1>
+      <p class="mt-sm">Sigue el flujo paso a paso para crear un prompt optimizado y riguroso.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step active">
+        <div class="step-number">1</div>
+        <span class="step-label">Contexto</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <span class="step-label">Tarea</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <span class="step-label">Restricciones</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <span class="step-label">Finalizar</span>
+      </div>
+    </div>
+
+    <!-- Three Column Layout -->
+    <div class="three-column-layout">
+      
+      <!-- Column 1: User Input -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📝</span>
+            Entrada del Usuario
+          </h3>
+          <span class="column-label">Columna 1</span>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">
+            Tu idea o prompt inicial <span class="text-muted">(opcional)</span>
+          </label>
+          <textarea class="form-textarea" placeholder="Escribe aquí tu idea inicial o el prompt que deseas mejorar...
+
+Ejemplo: 'Necesito que me ayudes a escribir código Python para procesar datos de ventas'"></textarea>
+        </div>
+
+        <p class="text-muted" style="font-size: 0.8125rem;">
+          💡 También puedes empezar desde cero usando el constructor guiado en la columna central.
+        </p>
+      </div>
+
+      <!-- Column 2: Guided Builder - Context Step -->
+      <div class="card" style="border-color: var(--accent-primary); box-shadow: var(--shadow-glow);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">🎯</span>
+            Paso 1: Definir Contexto y Rol
+          </h3>
+          <span class="column-label">Columna 2</span>
+        </div>
+
+        <p class="mb-lg text-muted" style="font-size: 0.9rem;">
+          Establece la identidad y conocimientos de base para el modelo de lenguaje.
+        </p>
+
+        <!-- Context Section Tab -->
+        <div class="tabs">
+          <button class="tab active">🎭 Rol/Persona</button>
+          <button class="tab">📚 Información Base</button>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Rol o Persona del LLM <span class="required">*</span>
+          </label>
+          <input type="text" class="form-input" placeholder="Ej: Actúa como un experto en Python con 10 años de experiencia">
+          <p class="text-muted mt-sm" style="font-size: 0.75rem;">
+            Define quién debe ser el modelo durante la interacción
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Contexto o información de fondo
+          </label>
+          <textarea class="form-textarea" style="min-height: 120px;" placeholder="Proporciona información adicional relevante...
+
+Ej: El proyecto usa Python 3.11, pandas para análisis de datos, y sigue las convenciones PEP8."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Nivel de expertise del modelo</label>
+          <select class="form-select">
+            <option value="">Selecciona un nivel...</option>
+            <option value="beginner">Principiante - Explicaciones detalladas</option>
+            <option value="intermediate">Intermedio - Balance entre detalle y concisión</option>
+            <option value="expert">Experto - Respuestas técnicas concisas</option>
+          </select>
+        </div>
+
+        <div class="btn-group mt-xl">
+          <a href="paso-2-tarea.html" class="btn btn-primary btn-lg btn-block">
+            Continuar al Paso 2 →
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 3: Preview -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">👁️</span>
+            Vista Previa del Prompt
+          </h3>
+          <span class="column-label">Columna 3</span>
+        </div>
+
+        <div class="prompt-preview">
+          <div class="section">
+            <span class="section-label">Contexto / Rol</span>
+            <span class="text-muted" style="font-style: italic;">
+              Completa el paso 1 para ver el contexto aquí...
+            </span>
+          </div>
+          <div class="section">
+            <span class="section-label">Tarea Principal</span>
+            <span class="text-muted" style="font-style: italic;">
+              Pendiente - Paso 2
+            </span>
+          </div>
+          <div class="section">
+            <span class="section-label">Restricciones y Formato</span>
+            <span class="text-muted" style="font-style: italic;">
+              Pendiente - Paso 3
+            </span>
+          </div>
+        </div>
+
+        <div class="score-display mt-lg">
+          <div class="score-circle" style="--score: 15;">
+            <span class="score-value">15%</span>
+          </div>
+          <div class="score-info">
+            <h4>Puntaje de Claridad</h4>
+            <p>Completa más pasos para mejorar</p>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-block mt-lg" disabled>
+          📋 Copiar prompt (incompleto)
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 1: Asistente Guiado</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

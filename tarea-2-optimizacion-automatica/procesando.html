@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procesando... - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+  <style>
+    /* Loading Animation */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .processing-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      transition: all 0.3s ease;
+    }
+    
+    .processing-step.active {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+    
+    .processing-step.completed {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    
+    .processing-step.active .step-icon {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    .step-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      background: var(--bg-tertiary);
+      color: var(--text-muted);
+    }
+    
+    .processing-step.active .step-icon {
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+    }
+    
+    .processing-step.completed .step-icon {
+      background: var(--accent-success);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="../tarea-3-comparacion-ab/index.html" class="nav-tab">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="index.html" class="back-link">
+      ← Cancelar y volver
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Optimización Automática de Prompts</h1>
+      <p class="mt-sm">Procesando tu prompt...</p>
+    </div>
+
+    <!-- Three Column Layout -->
+    <div class="three-column-layout">
+      
+      <!-- Column 1: Original Input -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📝</span>
+            Tu Prompt Inicial
+          </h3>
+          <span class="column-label">Columna 1</span>
+        </div>
+        
+        <div class="prompt-preview" style="background: var(--bg-tertiary);">
+          Ayúdame a escribir un email profesional para solicitar un aumento de sueldo. Soy desarrollador senior con 5 años en la empresa y he liderado varios proyectos exitosos.
+        </div>
+
+        <div class="mt-lg">
+          <span class="tag">Modo: Balanceado</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Processing Status -->
+      <div class="card" style="border-color: var(--accent-primary); box-shadow: var(--shadow-glow);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">🔄</span>
+            Estado del Procesamiento
+          </h3>
+          <span class="column-label">Columna 2</span>
+        </div>
+
+        <div class="processing-step completed">
+          <div class="step-icon">✓</div>
+          <div>
+            <strong>Análisis inicial</strong>
+            <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Intención identificada</p>
+          </div>
+        </div>
+
+        <div class="processing-step completed">
+          <div class="step-icon">✓</div>
+          <div>
+            <strong>Extracción de elementos</strong>
+            <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Contexto y tarea detectados</p>
+          </div>
+        </div>
+
+        <div class="processing-step active">
+          <div class="step-icon">⏳</div>
+          <div>
+            <strong>Detectando ambigüedad...</strong>
+            <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Analizando claridad del prompt</p>
+          </div>
+        </div>
+
+        <div class="processing-step">
+          <div class="step-icon">4</div>
+          <div>
+            <strong>Estructuración</strong>
+            <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Pendiente</p>
+          </div>
+        </div>
+
+        <div class="processing-step">
+          <div class="step-icon">5</div>
+          <div>
+            <strong>Validación final</strong>
+            <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Pendiente</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <div class="loading-spinner" style="margin: 0 auto;"></div>
+          <p class="loading-text">Procesando...</p>
+        </div>
+
+        <!-- Link to modal state (simulating ambiguity detection) -->
+        <a href="modal-advertencia.html" class="btn btn-secondary btn-block mt-lg">
+          Ver estado con advertencia →
+        </a>
+        
+        <a href="resultado.html" class="btn btn-primary btn-block mt-sm">
+          Ver resultado final →
+        </a>
+      </div>
+
+      <!-- Column 3: Preview (Loading) -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">✨</span>
+            Prompt Optimizado Final
+          </h3>
+          <span class="column-label">Columna 3</span>
+        </div>
+
+        <div style="text-align: center; padding: 4rem 2rem;">
+          <div class="loading-spinner" style="margin: 0 auto;"></div>
+          <h3 class="mt-lg text-muted">Generando versión optimizada...</h3>
+          <p class="text-muted mt-sm" style="font-size: 0.875rem;">
+            Esto tomará unos segundos
+          </p>
+        </div>
+
+        <div class="score-display mt-lg" style="opacity: 0.5;">
+          <div class="score-circle" style="--score: 0;">
+            <span class="score-value">...</span>
+          </div>
+          <div class="score-info">
+            <h4>Calculando puntaje</h4>
+            <p>Espera un momento...</p>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-block mt-lg" disabled>
+          📋 Copiar prompt optimizado
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 2: Optimización Automática</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

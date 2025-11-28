@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="../tarea-3-comparacion-ab/index.html" class="nav-tab">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="index.html" class="back-link">
+      ← Optimizar otro prompt
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Optimización Automática de Prompts</h1>
+      <p class="mt-sm">¡Tu prompt ha sido optimizado exitosamente!</p>
+    </div>
+
+    <!-- Three Column Layout -->
+    <div class="three-column-layout">
+      
+      <!-- Column 1: Original Input -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📝</span>
+            Tu Prompt Inicial
+          </h3>
+          <span class="column-label">Columna 1</span>
+        </div>
+        
+        <div class="prompt-preview" style="background: var(--bg-tertiary); min-height: 150px;">
+          Ayúdame a escribir un email profesional para solicitar un aumento de sueldo. Soy desarrollador senior con 5 años en la empresa y he liderado varios proyectos exitosos.
+        </div>
+
+        <div class="score-display mt-lg">
+          <div class="score-circle" style="--score: 35;">
+            <span class="score-value" style="color: var(--accent-warning);">35%</span>
+          </div>
+          <div class="score-info">
+            <h4>Puntaje Original</h4>
+            <p>Faltaban estructura y detalles</p>
+          </div>
+        </div>
+
+        <div class="mt-lg">
+          <a href="../tarea-3-comparacion-ab/index.html" class="btn btn-secondary btn-block">
+            ⚖️ Comparar con tu versión
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Recommendations -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">💡</span>
+            Recomendaciones Aplicadas
+          </h3>
+          <span class="column-label">Columna 2</span>
+        </div>
+
+        <p class="text-muted mb-lg" style="font-size: 0.9rem;">
+          El sistema aplicó las siguientes mejoras a tu prompt:
+        </p>
+
+        <ul class="recommendation-list">
+          <li class="recommendation-item">
+            <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success);">+</div>
+            <div>
+              <strong style="color: var(--text-primary);">Rol definido</strong>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                Se añadió el rol de "asistente de redacción ejecutiva"
+              </p>
+            </div>
+          </li>
+          <li class="recommendation-item">
+            <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success);">+</div>
+            <div>
+              <strong style="color: var(--text-primary);">Tono especificado</strong>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                Tono formal y profesional con énfasis en logros
+              </p>
+            </div>
+          </li>
+          <li class="recommendation-item">
+            <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success);">+</div>
+            <div>
+              <strong style="color: var(--text-primary);">Estructura del email</strong>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                Formato con secciones claras: apertura, justificación, cierre
+              </p>
+            </div>
+          </li>
+          <li class="recommendation-item">
+            <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success);">+</div>
+            <div>
+              <strong style="color: var(--text-primary);">Contexto expandido</strong>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                Se incluyeron detalles sobre experiencia y logros
+              </p>
+            </div>
+          </li>
+          <li class="recommendation-item">
+            <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success);">+</div>
+            <div>
+              <strong style="color: var(--text-primary);">Longitud definida</strong>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                Email conciso de 3-4 párrafos
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: var(--radius-md); padding: 1rem; margin-top: 1.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span>📈</span>
+            <div>
+              <strong style="color: var(--accent-primary);">Mejora del +53%</strong>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">en claridad y estructura</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: Optimized Result -->
+      <div class="card" style="border-color: var(--accent-success); box-shadow: 0 0 40px rgba(16, 185, 129, 0.15);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">✨</span>
+            Prompt Optimizado Final
+          </h3>
+          <span class="column-label">Columna 3</span>
+        </div>
+
+        <div class="prompt-preview" style="max-height: none; background: var(--bg-tertiary); border-color: var(--accent-success);">
+          <div class="section">
+            <span class="section-label">Contexto / Rol</span>
+            <span class="highlight">Actúa como un asistente de redacción ejecutiva</span> especializado en comunicación corporativa y negociación salarial. Tu objetivo es ayudar a profesionales a comunicar su valor de manera efectiva y persuasiva.
+          </div>
+          <div class="section">
+            <span class="section-label">Tarea Principal</span>
+            <span class="highlight">[Redactar Email]</span><br><br>
+            Escribe un email profesional para solicitar una revisión salarial dirigido a mi supervisor directo. El email debe:
+            <ul style="margin: 0.5rem 0 0 1rem; padding: 0; color: var(--text-secondary);">
+              <li>Destacar mi trayectoria de 5 años como desarrollador senior</li>
+              <li>Mencionar los proyectos exitosos que he liderado</li>
+              <li>Proponer una reunión para discutir mi compensación</li>
+            </ul>
+          </div>
+          <div class="section">
+            <span class="section-label">Restricciones y Formato</span>
+            <span class="highlight">Tono:</span> Profesional, asertivo pero respetuoso<br>
+            <span class="highlight">Estructura:</span> Saludo → Contexto → Justificación → Solicitud → Cierre<br>
+            <span class="highlight">Longitud:</span> 3-4 párrafos (máximo 250 palabras)<br>
+            <span class="highlight">Evitar:</span> Ultimátums, comparaciones con colegas, quejas
+          </div>
+        </div>
+
+        <div class="score-display mt-lg">
+          <div class="score-circle" style="--score: 88;">
+            <span class="score-value">88%</span>
+          </div>
+          <div class="score-info">
+            <h4>Puntaje Optimizado</h4>
+            <p>¡Excelente calidad!</p>
+          </div>
+        </div>
+
+        <button class="btn btn-success btn-lg btn-block mt-lg" onclick="alert('✅ Prompt copiado al portapapeles!')">
+          📋 Copiar prompt optimizado
+        </button>
+
+        <div class="btn-group mt-md">
+          <button class="btn btn-secondary btn-sm" style="flex: 1;">
+            📤 Exportar
+          </button>
+          <button class="btn btn-secondary btn-sm" style="flex: 1;">
+            💾 Guardar
+          </button>
+          <a href="index.html" class="btn btn-secondary btn-sm" style="flex: 1;">
+            🔄 Nuevo
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 2: Optimización Automática</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimización Automática - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="../tarea-3-comparacion-ab/index.html" class="nav-tab">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="../index.html" class="back-link">
+      ← Volver al inicio
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Optimización Automática de Prompts</h1>
+      <p class="mt-sm">Transforma tu prompt simple en una versión estructurada y optimizada con un solo clic.</p>
+    </div>
+
+    <!-- Three Column Layout -->
+    <div class="three-column-layout">
+      
+      <!-- Column 1: User Input -->
+      <div class="card" style="border-color: var(--accent-secondary); box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📝</span>
+            Entrada del Usuario
+          </h3>
+          <span class="column-label">Columna 1</span>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">
+            Tu prompt inicial <span class="required">*</span>
+          </label>
+          <textarea class="form-textarea code" style="min-height: 280px;" placeholder="Pega o escribe aquí tu prompt inicial...
+
+Ejemplo:
+'Ayúdame a escribir un email profesional para solicitar un aumento de sueldo. Soy desarrollador senior con 5 años en la empresa.'
+
+El sistema analizará tu prompt y lo transformará en una versión optimizada con estructura clara."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Modo de optimización</label>
+          <select class="form-select">
+            <option value="balanced" selected>⚖️ Balanceado - Mejoras generales</option>
+            <option value="precision">🎯 Precisión - Máxima claridad técnica</option>
+            <option value="creative">🎨 Creativo - Mantiene flexibilidad</option>
+            <option value="concise">📐 Conciso - Mínimo de tokens</option>
+          </select>
+        </div>
+
+        <a href="procesando.html" class="btn btn-primary btn-lg btn-block mt-lg">
+          ✨ Refinar automáticamente
+        </a>
+
+        <p class="text-center text-muted mt-md" style="font-size: 0.8125rem;">
+          El proceso toma aproximadamente 3-5 segundos
+        </p>
+      </div>
+
+      <!-- Column 2: Processing Info -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">🔄</span>
+            Proceso de Optimización
+          </h3>
+          <span class="column-label">Columna 2</span>
+        </div>
+
+        <div style="text-align: center; padding: 2rem 0;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-tertiary); margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+            🧠
+          </div>
+          <h3 class="mt-lg">¿Cómo funciona?</h3>
+          <p class="text-muted mt-sm" style="font-size: 0.9rem; max-width: 350px; margin: 0 auto;">
+            Nuestro sistema analiza tu prompt y aplica técnicas de ingeniería de prompts para optimizarlo.
+          </p>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem;">
+          <ul class="recommendation-list">
+            <li class="recommendation-item">
+              <div class="recommendation-icon">1</div>
+              <span class="recommendation-text"><strong>Análisis</strong> - Identifica la intención y elementos clave</span>
+            </li>
+            <li class="recommendation-item">
+              <div class="recommendation-icon">2</div>
+              <span class="recommendation-text"><strong>Estructuración</strong> - Organiza en Contexto, Tarea, Formato</span>
+            </li>
+            <li class="recommendation-item">
+              <div class="recommendation-icon">3</div>
+              <span class="recommendation-text"><strong>Refinamiento</strong> - Añade claridad y reduce ambigüedad</span>
+            </li>
+            <li class="recommendation-item">
+              <div class="recommendation-icon">4</div>
+              <span class="recommendation-text"><strong>Validación</strong> - Verifica coherencia y calidad</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Column 3: Preview (Empty State) -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">✨</span>
+            Prompt Optimizado Final
+          </h3>
+          <span class="column-label">Columna 3</span>
+        </div>
+
+        <div style="text-align: center; padding: 4rem 2rem;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--bg-tertiary); margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; opacity: 0.5;">
+            📋
+          </div>
+          <h3 class="mt-lg text-muted">Esperando tu prompt</h3>
+          <p class="text-muted mt-sm" style="font-size: 0.875rem;">
+            Ingresa un prompt inicial y presiona<br>"Refinar automáticamente" para ver<br>la versión optimizada aquí.
+          </p>
+        </div>
+
+        <div class="score-display mt-lg" style="opacity: 0.5;">
+          <div class="score-circle" style="--score: 0;">
+            <span class="score-value">—</span>
+          </div>
+          <div class="score-info">
+            <h4>Puntaje de Claridad</h4>
+            <p>Sin datos aún</p>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-block mt-lg" disabled>
+          📋 Copiar prompt optimizado
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 2: Optimización Automática</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

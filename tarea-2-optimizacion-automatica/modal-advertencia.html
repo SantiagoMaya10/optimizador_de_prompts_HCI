@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advertencia de Ambigüedad - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="../tarea-3-comparacion-ab/index.html" class="nav-tab">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Optimización Automática de Prompts</h1>
+      <p class="mt-sm">Se detectaron elementos que requieren tu atención.</p>
+    </div>
+
+    <!-- Three Column Layout with Modal Overlay -->
+    <div class="three-column-layout" style="opacity: 0.3; pointer-events: none;">
+      
+      <!-- Column 1 -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📝</span>
+            Tu Prompt Inicial
+          </h3>
+        </div>
+        <div class="prompt-preview" style="background: var(--bg-tertiary);">
+          Ayúdame a escribir un email profesional para solicitar un aumento de sueldo...
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">🔄</span>
+            Estado del Procesamiento
+          </h3>
+        </div>
+        <p class="text-muted">Procesando...</p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">✨</span>
+            Prompt Optimizado
+          </h3>
+        </div>
+        <p class="text-muted">Esperando...</p>
+      </div>
+
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay">
+      <div class="modal" style="max-width: 560px;">
+        <div class="modal-icon warning">⚠️</div>
+        <h2>Ambigüedad Detectada</h2>
+        <p style="text-align: left; margin-bottom: 1.5rem;">
+          El sistema ha identificado algunos elementos que podrían mejorarse para obtener un prompt más efectivo:
+        </p>
+
+        <!-- Ambiguity Issues -->
+        <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; text-align: left;">
+          <ul class="recommendation-list" style="margin: 0;">
+            <li class="recommendation-item" style="background: transparent; padding: 0.75rem 0; border-bottom: 1px solid var(--border-subtle);">
+              <div class="recommendation-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-warning);">!</div>
+              <div>
+                <strong style="color: var(--text-primary);">Tono no especificado</strong>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                  ¿Formal, semi-formal, o asertivo?
+                </p>
+              </div>
+            </li>
+            <li class="recommendation-item" style="background: transparent; padding: 0.75rem 0; border-bottom: 1px solid var(--border-subtle);">
+              <div class="recommendation-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-warning);">!</div>
+              <div>
+                <strong style="color: var(--text-primary);">Longitud indefinida</strong>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                  ¿Email breve o detallado con justificaciones?
+                </p>
+              </div>
+            </li>
+            <li class="recommendation-item" style="background: transparent; padding: 0.75rem 0;">
+              <div class="recommendation-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-warning);">!</div>
+              <div>
+                <strong style="color: var(--text-primary);">Destinatario no claro</strong>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0.25rem 0 0;">
+                  ¿Supervisor directo, RRHH, o gerencia?
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 1.5rem;">
+          Puedes continuar con la optimización automática o volver a editar tu prompt para mayor precisión.
+        </p>
+
+        <div class="btn-group">
+          <a href="index.html" class="btn btn-secondary" style="flex: 1;">
+            ← Modificar prompt
+          </a>
+          <a href="resultado.html" class="btn btn-primary" style="flex: 1;">
+            Continuar de todos modos →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 2: Optimización Automática</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

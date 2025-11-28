@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados A/B - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+  <style>
+    .winner-badge {
+      background: linear-gradient(135deg, var(--accent-success), #059669);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .metric-comparison {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+    }
+    
+    .metric-comparison .value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .metric-comparison .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .metric-comparison .vs {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    
+    .response-sample {
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="../tarea-2-optimizacion-automatica/index.html" class="nav-tab">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="configuracion.html" class="back-link">
+      ← Volver a configuración
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Resultados de la Prueba A/B</h1>
+      <p class="mt-sm">Análisis comparativo completado. Revisa las métricas y respuestas generadas.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Seleccionar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Configurar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Ejecutar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step active">
+        <div class="step-number">4</div>
+        <span class="step-label">Decidir</span>
+      </div>
+    </div>
+
+    <!-- Results Summary Banner -->
+    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.1)); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <h2 style="color: var(--accent-success); margin-bottom: 0.5rem;">🏆 El Prompt B es el ganador</h2>
+        <p class="text-muted" style="margin: 0;">
+          El prompt optimizado superó al original en todas las métricas evaluadas.
+        </p>
+      </div>
+      <a href="decision.html" class="btn btn-success btn-lg">
+        Seleccionar Ganador →
+      </a>
+    </div>
+
+    <!-- Three Column Layout for Results -->
+    <div class="three-column-layout">
+      
+      <!-- Column 1: Metrics Comparison -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📊</span>
+            Métricas de Rendimiento
+          </h3>
+        </div>
+
+        <!-- Consistency -->
+        <div class="metric-comparison">
+          <div style="text-align: center;">
+            <div class="value" style="color: var(--accent-warning);">68%</div>
+            <div class="label">Prompt A</div>
+          </div>
+          <div class="vs">Consistencia</div>
+          <div style="text-align: center;">
+            <div class="value" style="color: var(--accent-success);">94%</div>
+            <div class="label">Prompt B</div>
+          </div>
+        </div>
+
+        <!-- Precision -->
+        <div class="metric-comparison">
+          <div style="text-align: center;">
+            <div class="value" style="color: var(--accent-warning);">72%</div>
+            <div class="label">Prompt A</div>
+          </div>
+          <div class="vs">Precisión</div>
+          <div style="text-align: center;">
+            <div class="value" style="color: var(--accent-success);">91%</div>
+            <div class="label">Prompt B</div>
+          </div>
+        </div>
+
+        <!-- Response Length -->
+        <div class="metric-comparison">
+          <div style="text-align: center;">
+            <div class="value">342</div>
+            <div class="label">Prompt A</div>
+          </div>
+          <div class="vs">Palabras Avg</div>
+          <div style="text-align: center;">
+            <div class="value" style="color: var(--accent-primary);">218</div>
+            <div class="label">Prompt B</div>
+          </div>
+        </div>
+
+        <!-- Response Time -->
+        <div class="metric-comparison">
+          <div style="text-align: center;">
+            <div class="value">2.1s</div>
+            <div class="label">Prompt A</div>
+          </div>
+          <div class="vs">Tiempo Avg</div>
+          <div style="text-align: center;">
+            <div class="value">2.2s</div>
+            <div class="label">Prompt B</div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: 1rem; margin-top: 1rem;">
+          <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">
+            <strong style="color: var(--text-primary);">Resumen:</strong> El prompt B produce respuestas más consistentes, precisas y concisas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Column 2: Response A -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="comparison-badge badge-a">A</span>
+            Respuesta del Prompt Original
+          </h3>
+        </div>
+
+        <div class="response-sample">
+          <p>Estimado/a [Nombre del supervisor],</p>
+          <br>
+          <p>Espero que este correo le encuentre bien. Me dirijo a usted para tratar un tema importante relacionado con mi compensación actual en la empresa.</p>
+          <br>
+          <p>Durante los últimos 5 años como desarrollador senior, he tenido la oportunidad de contribuir significativamente al éxito de varios proyectos. He liderado equipos, implementado soluciones técnicas complejas y he demostrado un compromiso constante con la calidad del trabajo.</p>
+          <br>
+          <p>Creo que sería apropiado revisar mi situación salarial considerando mi experiencia, responsabilidades actuales y contribuciones al equipo. Me gustaría solicitar una reunión para discutir este tema con más detalle cuando le sea conveniente.</p>
+          <br>
+          <p>Agradezco su tiempo y consideración.</p>
+          <br>
+          <p>Saludos cordiales,<br>[Tu nombre]</p>
+        </div>
+
+        <div class="mt-lg">
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem;">Observaciones</h4>
+          <ul class="recommendation-list">
+            <li class="recommendation-item" style="background: transparent; padding: 0.5rem 0;">
+              <div class="recommendation-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-warning); width: 20px; height: 20px; font-size: 0.625rem;">!</div>
+              <span style="font-size: 0.8125rem;">Tono algo genérico y vago</span>
+            </li>
+            <li class="recommendation-item" style="background: transparent; padding: 0.5rem 0;">
+              <div class="recommendation-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-warning); width: 20px; height: 20px; font-size: 0.625rem;">!</div>
+              <span style="font-size: 0.8125rem;">Falta de detalles específicos</span>
+            </li>
+            <li class="recommendation-item" style="background: transparent; padding: 0.5rem 0;">
+              <div class="recommendation-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-warning); width: 20px; height: 20px; font-size: 0.625rem;">!</div>
+              <span style="font-size: 0.8125rem;">Variación entre iteraciones</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Column 3: Response B -->
+      <div class="card" style="border-color: var(--accent-success);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="comparison-badge badge-b">B</span>
+            Respuesta del Prompt Optimizado
+          </h3>
+          <span class="winner-badge">🏆 Ganador</span>
+        </div>
+
+        <div class="response-sample" style="border-color: var(--accent-success);">
+          <p>Estimado [Nombre],</p>
+          <br>
+          <p>Me dirijo a usted para solicitar una reunión en la cual podamos revisar mi compensación actual. En mis 5 años como Desarrollador Senior, he liderado la implementación exitosa de [proyecto clave], logrando [resultado medible].</p>
+          <br>
+          <p>Considerando mi trayectoria, las responsabilidades adicionales asumidas y mi alineación con los objetivos del equipo, creo que es un momento apropiado para esta conversación.</p>
+          <br>
+          <p>¿Podríamos agendar 30 minutos esta semana o la próxima para discutirlo?</p>
+          <br>
+          <p>Gracias por su consideración.</p>
+          <br>
+          <p>Saludos,<br>[Nombre]</p>
+        </div>
+
+        <div class="mt-lg">
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem;">Fortalezas</h4>
+          <ul class="recommendation-list">
+            <li class="recommendation-item" style="background: transparent; padding: 0.5rem 0;">
+              <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success); width: 20px; height: 20px; font-size: 0.625rem;">✓</div>
+              <span style="font-size: 0.8125rem;">Estructura clara y profesional</span>
+            </li>
+            <li class="recommendation-item" style="background: transparent; padding: 0.5rem 0;">
+              <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success); width: 20px; height: 20px; font-size: 0.625rem;">✓</div>
+              <span style="font-size: 0.8125rem;">Conciso y al punto</span>
+            </li>
+            <li class="recommendation-item" style="background: transparent; padding: 0.5rem 0;">
+              <div class="recommendation-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-success); width: 20px; height: 20px; font-size: 0.625rem;">✓</div>
+              <span style="font-size: 0.8125rem;">Call-to-action específico</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+      <a href="index.html" class="btn btn-secondary">
+        🔄 Nueva Comparación
+      </a>
+      <a href="decision.html" class="btn btn-success btn-lg">
+        ✓ Seleccionar Prompt B como Ganador
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 3: Comparación A/B</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejecutando Prueba A/B - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+  <style>
+    @keyframes progressBar {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    
+    .progress-bar {
+      height: 8px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      border-radius: 4px;
+      animation: progressBar 4s ease-out forwards;
+    }
+    
+    .execution-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.5rem;
+    }
+    
+    .execution-item.running {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+    
+    .execution-item.complete {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .mini-spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--bg-tertiary);
+      border-top-color: var(--accent-primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="../tarea-2-optimizacion-automatica/index.html" class="nav-tab">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="configuracion.html" class="back-link">
+      ← Cancelar prueba
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Ejecutando Prueba A/B</h1>
+      <p class="mt-sm">Enviando prompts al modelo y recopilando respuestas...</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Seleccionar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Configurar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step active">
+        <div class="step-number">3</div>
+        <span class="step-label">Ejecutar</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <span class="step-label">Decidir</span>
+      </div>
+    </div>
+
+    <!-- Execution Status -->
+    <div class="two-column-layout">
+      
+      <!-- Prompt A Execution -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="comparison-badge badge-a">A</span>
+            Prompt Original
+          </h3>
+          <span class="tag">En progreso</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 66%;"></div>
+        </div>
+
+        <div class="execution-item complete">
+          <span style="color: var(--accent-success);">✓</span>
+          <span style="font-size: 0.875rem;">Iteración 1</span>
+          <span class="text-muted" style="margin-left: auto; font-size: 0.75rem;">2.3s</span>
+        </div>
+
+        <div class="execution-item complete">
+          <span style="color: var(--accent-success);">✓</span>
+          <span style="font-size: 0.875rem;">Iteración 2</span>
+          <span class="text-muted" style="margin-left: auto; font-size: 0.75rem;">1.9s</span>
+        </div>
+
+        <div class="execution-item running">
+          <div class="mini-spinner"></div>
+          <span style="font-size: 0.875rem;">Iteración 3</span>
+          <span class="text-muted" style="margin-left: auto; font-size: 0.75rem;">...</span>
+        </div>
+
+        <div class="mt-lg" style="text-align: center;">
+          <span class="text-muted" style="font-size: 0.875rem;">
+            Modelo: GPT-4 | 2 de 3 completas
+          </span>
+        </div>
+      </div>
+
+      <!-- Prompt B Execution -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="comparison-badge badge-b">B</span>
+            Prompt Optimizado
+          </h3>
+          <span class="tag tag-success">Completado</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 100%; animation: none;"></div>
+        </div>
+
+        <div class="execution-item complete">
+          <span style="color: var(--accent-success);">✓</span>
+          <span style="font-size: 0.875rem;">Iteración 1</span>
+          <span class="text-muted" style="margin-left: auto; font-size: 0.75rem;">2.1s</span>
+        </div>
+
+        <div class="execution-item complete">
+          <span style="color: var(--accent-success);">✓</span>
+          <span style="font-size: 0.875rem;">Iteración 2</span>
+          <span class="text-muted" style="margin-left: auto; font-size: 0.75rem;">2.4s</span>
+        </div>
+
+        <div class="execution-item complete">
+          <span style="color: var(--accent-success);">✓</span>
+          <span style="font-size: 0.875rem;">Iteración 3</span>
+          <span class="text-muted" style="margin-left: auto; font-size: 0.75rem;">2.0s</span>
+        </div>
+
+        <div class="mt-lg" style="text-align: center;">
+          <span class="text-muted" style="font-size: 0.875rem;">
+            Modelo: GPT-4 | 3 de 3 completas ✓
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Progress Summary -->
+    <div style="max-width: 600px; margin: 2rem auto; text-align: center;">
+      <div class="card" style="padding: 2rem;">
+        <div class="loading-spinner" style="margin: 0 auto;"></div>
+        <h3 class="mt-lg">Finalizando ejecución...</h3>
+        <p class="text-muted mt-sm">
+          Calculando métricas de rendimiento y generando el reporte comparativo.
+        </p>
+        
+        <div class="progress-bar mt-lg">
+          <div class="progress-fill"></div>
+        </div>
+
+        <a href="resultados.html" class="btn btn-primary btn-lg mt-lg">
+          Ver Resultados →
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 3: Comparación A/B</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

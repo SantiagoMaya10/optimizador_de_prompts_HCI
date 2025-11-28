@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparación A/B - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="../tarea-2-optimizacion-automatica/index.html" class="nav-tab">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="../index.html" class="back-link">
+      ← Volver al inicio
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Comparación A/B de Prompts</h1>
+      <p class="mt-sm">Evalúa el rendimiento de diferentes versiones de prompts y determina cuál produce mejores resultados.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step active">
+        <div class="step-number">1</div>
+        <span class="step-label">Seleccionar</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <span class="step-label">Configurar</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <span class="step-label">Ejecutar</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <span class="step-label">Decidir</span>
+      </div>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="two-column-layout">
+      
+      <!-- Prompt A: Original -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="comparison-badge badge-a">A</span>
+            Prompt Original
+          </h3>
+          <span class="tag">Tu versión</span>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">
+            Prompt Original <span class="required">*</span>
+          </label>
+          <textarea class="form-textarea code" style="min-height: 220px;" placeholder="Pega aquí tu prompt original...">Ayúdame a escribir un email profesional para solicitar un aumento de sueldo. Soy desarrollador senior con 5 años en la empresa y he liderado varios proyectos exitosos.</textarea>
+        </div>
+
+        <div class="score-display">
+          <div class="score-circle" style="--score: 35;">
+            <span class="score-value" style="color: var(--accent-warning);">35%</span>
+          </div>
+          <div class="score-info">
+            <h4>Puntaje Estimado</h4>
+            <p>Prompt básico, sin estructura</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prompt B: Optimized -->
+      <div class="card" style="border-color: var(--accent-primary);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="comparison-badge badge-b">B</span>
+            Prompt Optimizado
+          </h3>
+          <span class="tag tag-success">Sugerido</span>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">
+            Prompt Optimizado <span class="required">*</span>
+          </label>
+          <textarea class="form-textarea code" style="min-height: 220px;">Actúa como un asistente de redacción ejecutiva especializado en comunicación corporativa.
+
+[Tarea] Escribe un email profesional para solicitar una revisión salarial.
+
+[Contexto] Soy desarrollador senior con 5 años de experiencia, he liderado proyectos exitosos.
+
+[Formato] Tono profesional, 3-4 párrafos, estructura: Saludo → Justificación → Solicitud → Cierre</textarea>
+        </div>
+
+        <div class="score-display">
+          <div class="score-circle" style="--score: 88;">
+            <span class="score-value">88%</span>
+          </div>
+          <div class="score-info">
+            <h4>Puntaje Estimado</h4>
+            <p>Prompt estructurado y claro</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+      <button class="btn btn-secondary">
+        🔄 Intercambiar A ↔ B
+      </button>
+      <a href="configuracion.html" class="btn btn-primary btn-lg">
+        Configurar Prueba A/B →
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 3: Comparación A/B</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+

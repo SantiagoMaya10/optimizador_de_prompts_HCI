@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurar Prueba A/B - Prompt Optimizer</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Prompt<span>Optimizer</span></div>
+      </a>
+      <nav class="nav-tabs">
+        <a href="../tarea-1-asistente-guiado/index.html" class="nav-tab">
+          <span>🎯</span> Asistente Guiado
+        </a>
+        <a href="../tarea-2-optimizacion-automatica/index.html" class="nav-tab">
+          <span>✨</span> Optimización Auto
+        </a>
+        <a href="index.html" class="nav-tab active">
+          <span>⚖️</span> Comparación A/B
+        </a>
+      </nav>
+    </header>
+
+    <!-- Back Link -->
+    <a href="index.html" class="back-link">
+      ← Volver a selección de prompts
+    </a>
+
+    <!-- Page Title -->
+    <div class="mb-xl">
+      <h1>Configurar Prueba A/B</h1>
+      <p class="mt-sm">Define los parámetros para ejecutar la comparación entre ambos prompts.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step completed">
+        <div class="step-number">✓</div>
+        <span class="step-label">Seleccionar</span>
+      </div>
+      <div class="step-connector completed"></div>
+      <div class="step active">
+        <div class="step-number">2</div>
+        <span class="step-label">Configurar</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <span class="step-label">Ejecutar</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <span class="step-label">Decidir</span>
+      </div>
+    </div>
+
+    <!-- Configuration Layout -->
+    <div class="three-column-layout">
+      
+      <!-- Column 1: Summary of prompts -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📋</span>
+            Prompts Seleccionados
+          </h3>
+        </div>
+        
+        <!-- Prompt A Summary -->
+        <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1rem;">
+          <div class="comparison-header">
+            <span class="comparison-badge badge-a">A</span>
+            <strong>Prompt Original</strong>
+          </div>
+          <p class="text-muted" style="font-size: 0.8125rem; margin-top: 0.5rem; line-height: 1.5;">
+            "Ayúdame a escribir un email profesional para solicitar un aumento de sueldo..."
+          </p>
+          <div class="mt-sm">
+            <span class="tag" style="font-size: 0.6875rem;">35% claridad</span>
+          </div>
+        </div>
+
+        <!-- Prompt B Summary -->
+        <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 1rem; border: 1px solid rgba(6, 182, 212, 0.3);">
+          <div class="comparison-header">
+            <span class="comparison-badge badge-b">B</span>
+            <strong>Prompt Optimizado</strong>
+          </div>
+          <p class="text-muted" style="font-size: 0.8125rem; margin-top: 0.5rem; line-height: 1.5;">
+            "Actúa como un asistente de redacción ejecutiva especializado..."
+          </p>
+          <div class="mt-sm">
+            <span class="tag tag-success" style="font-size: 0.6875rem;">88% claridad</span>
+          </div>
+        </div>
+
+        <a href="index.html" class="btn btn-ghost btn-sm btn-block mt-lg">
+          ← Editar prompts
+        </a>
+      </div>
+
+      <!-- Column 2: Configuration Options -->
+      <div class="card" style="border-color: var(--accent-primary); box-shadow: var(--shadow-glow);">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">⚙️</span>
+            Configuración de la Prueba
+          </h3>
+        </div>
+
+        <!-- Model Selection -->
+        <div class="form-group">
+          <label class="form-label">
+            Modelo de Lenguaje (LLM) <span class="required">*</span>
+          </label>
+          <select class="form-select">
+            <option value="">Selecciona el modelo...</option>
+            <option value="gpt4" selected>🟢 GPT-4 (OpenAI)</option>
+            <option value="gpt35">🟢 GPT-3.5 Turbo (OpenAI)</option>
+            <option value="claude">🟣 Claude 3 (Anthropic)</option>
+            <option value="gemini">🔵 Gemini Pro (Google)</option>
+            <option value="llama">🟠 Llama 2 (Meta)</option>
+          </select>
+        </div>
+
+        <!-- Expected Response (Optional) -->
+        <div class="form-group">
+          <label class="form-label">
+            Respuesta Ideal Esperada <span class="text-muted">(opcional)</span>
+          </label>
+          <textarea class="form-textarea" style="min-height: 100px;" placeholder="Describe cómo debería lucir la respuesta ideal...
+
+Esto permite calcular métricas de precisión comparando las respuestas generadas con tu expectativa."></textarea>
+          <p class="text-muted mt-sm" style="font-size: 0.75rem;">
+            💡 Ayuda a calcular métricas de precisión y relevancia
+          </p>
+        </div>
+
+        <!-- Test Parameters -->
+        <div class="form-group">
+          <label class="form-label">Número de ejecuciones por prompt</label>
+          <div class="slider-container">
+            <span class="text-muted" style="font-size: 0.75rem;">1</span>
+            <input type="range" class="slider" min="1" max="10" value="3">
+            <span class="text-muted" style="font-size: 0.75rem;">10</span>
+            <span class="slider-value">3</span>
+          </div>
+          <p class="text-muted mt-sm" style="font-size: 0.75rem;">
+            Múltiples ejecuciones ayudan a evaluar la consistencia
+          </p>
+        </div>
+
+        <!-- Metrics to Evaluate -->
+        <div class="form-group">
+          <label class="form-label">Métricas a evaluar</label>
+          <div style="display: grid; gap: 0.5rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" checked> 
+              <span style="font-size: 0.875rem;">📊 Consistencia de respuestas</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" checked> 
+              <span style="font-size: 0.875rem;">🎯 Precisión (vs. respuesta esperada)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" checked> 
+              <span style="font-size: 0.875rem;">📏 Longitud de respuesta</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox"> 
+              <span style="font-size: 0.875rem;">⏱️ Tiempo de respuesta</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox"> 
+              <span style="font-size: 0.875rem;">💰 Costo estimado (tokens)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="btn-group mt-xl">
+          <a href="index.html" class="btn btn-secondary">
+            ← Anterior
+          </a>
+          <a href="ejecutando.html" class="btn btn-primary btn-lg" style="flex: 1;">
+            🚀 Ejecutar Prueba A/B
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 3: Preview -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📈</span>
+            Vista Previa de Métricas
+          </h3>
+        </div>
+
+        <p class="text-muted mb-lg" style="font-size: 0.875rem;">
+          Después de ejecutar la prueba, verás métricas comparativas como estas:
+        </p>
+
+        <div class="metrics-grid" style="opacity: 0.6;">
+          <div class="metric-card">
+            <div class="metric-value" style="color: var(--text-muted);">—</div>
+            <div class="metric-label">Consistencia A</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value" style="color: var(--text-muted);">—</div>
+            <div class="metric-label">Consistencia B</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value" style="color: var(--text-muted);">—</div>
+            <div class="metric-label">Precisión A</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value" style="color: var(--text-muted);">—</div>
+            <div class="metric-label">Precisión B</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; padding: 2rem; opacity: 0.6;">
+          <p class="text-muted" style="font-size: 0.8125rem;">
+            Las métricas se llenarán después de ejecutar la prueba
+          </p>
+        </div>
+
+        <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: 1rem;">
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.5rem;">💡 Tip</h4>
+          <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">
+            Ejecutar 3+ iteraciones proporciona resultados más confiables para evaluar la consistencia del modelo.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Prototipo de Alta Fidelidad — Tarea 3: Comparación A/B</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+
